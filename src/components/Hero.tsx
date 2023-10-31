@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
           <img
             src={HeroAvatar}
             alt="hero"
-            className="object-contain xl:mt-48 md:mt-20 sm:mt-24 lg:mt-12 mt-44"
+            className="object-contain xl:mt-48 md:mt-20 sm:mt-24 lg:mt-7 mt-44 mx-auto"
           />
         </div>
 
