@@ -1,27 +1,17 @@
-import { MouseEventHandler } from "react";
+import { CustomButtonProps } from "../types/index-types";
 
-type Props = {
-  title: string;
-  containerStyles?: string;
-  handleClick?: MouseEventHandler<HTMLButtonElement>;
-  btnType?: "button" | "submit";
-  textStyles?: string;
-  rightIcon?: string;
-  IsDisabled?: boolean;
-};
-
-const CustomButton: React.FC<Props> = ({
+const CustomButton: React.FC<CustomButtonProps> = ({
   title,
   containerStyles,
   handleClick,
   btnType,
   textStyles,
   rightIcon,
-  IsDisabled,
+  isDisabled,
 }) => {
   return (
     <button
-      disabled={false}
+      disabled={isDisabled}
       type={btnType || "button"}
       className={`flex flex-row relative justify-center items-center py-3 px-6 outline-none ${containerStyles}`}
       onClick={handleClick}

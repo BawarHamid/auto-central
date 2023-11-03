@@ -2,7 +2,13 @@ import CustomButton from "./CustomButton";
 import HeroAvatar from "../assets/public/hero5.png";
 
 const Hero: React.FC = () => {
-  const handleScroll = () => {};
+  const handleScroll = () => {
+    const nextSection = document.getElementById("discover");
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto">

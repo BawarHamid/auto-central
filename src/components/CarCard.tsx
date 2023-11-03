@@ -1,5 +1,4 @@
 import { calculateCarRent, generateCarImageUrl } from "../utils/car-service";
-import HeroAvatar from "../assets/public/hero4.png";
 import steeringwheel from "../assets/public/steering-wheel.svg";
 import tire from "../assets/public/tire.svg";
 import gas from "../assets/public/gas.svg";
@@ -7,29 +6,17 @@ import CustomButton from "./CustomButton";
 import rightIcon from "../assets/public/right-arrow.svg";
 import { useState } from "react";
 import CarDetails from "./CarDetails";
+import { CarProps } from "../types/index-types";
 
-type CarProps = {
-  city_mpg: number;
-  class: string;
-  combination_mpg: number;
-  cylinders: number;
-  displacement: number;
-  drive: string;
-  fuel_type: string;
-  highway_mpg: number;
-  make: string;
-  model: string;
-  transmission: string;
-  year: number;
-};
-
-type CarCardProps = {
+export type CarCardProps = {
   car: CarProps;
 };
 
 const CarCard: React.FC<CarCardProps> = ({ car }) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
+
   const carRent = calculateCarRent(city_mpg, year);
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (

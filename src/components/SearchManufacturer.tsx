@@ -2,15 +2,11 @@ import { Combobox, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
 import carlogo from "../assets/public/car-logo.svg";
 import { manufacturers } from "../constants";
+import { SearchManufacturerProps } from "../types/index-types";
 
-type Props = {
-  manufacturer: string;
-  setManufacturer: (manufacturer: string) => void;
-};
-
-const SearchManufacturer: React.FC<Props> = ({
-  manufacturer,
-  setManufacturer,
+const SearchManufacturer: React.FC<SearchManufacturerProps> = ({
+  selected,
+  setSelected,
 }) => {
   const [query, setQuery] = useState("");
 
@@ -26,7 +22,7 @@ const SearchManufacturer: React.FC<Props> = ({
 
   return (
     <div className="search-manufacturer">
-      <Combobox value={manufacturer} onChange={setManufacturer}>
+      <Combobox value={selected} onChange={setSelected}>
         <div className="relative w-full">
           {/* Button for the combobox. Click on the icon to see the complete dropdown */}
           <Combobox.Button className="absolute top-[14px]">

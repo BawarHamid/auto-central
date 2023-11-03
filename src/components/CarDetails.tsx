@@ -1,12 +1,12 @@
 import { Dialog, Transition } from "@headlessui/react";
-import CarProps from "./CarCard";
 import { Fragment } from "react";
 import closeIcon from "../assets/public/close.svg";
 import { generateCarImageUrl } from "../utils/car-service";
+import { CarProps } from "../types/index-types";
 
-type CarDetailsProps = {
+export type CarDetailsProps = {
   isOpen: boolean;
-  car: typeof CarProps;
+  car: CarProps;
   closeModal: () => void;
 };
 
